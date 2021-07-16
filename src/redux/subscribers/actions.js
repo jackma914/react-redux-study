@@ -1,4 +1,5 @@
-import { ADD_SUBSCRIBER, REMOVE_SUBSCRIBER } from "../types/subscribersTypes";
+import { REMOVE_SUBSCRIBER, ADD_SUBSCRIBER } from "./types";
+
 export const addSubscriber = () => {
   return {
     type: ADD_SUBSCRIBER,

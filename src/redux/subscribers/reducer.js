@@ -1,9 +1,9 @@
-import { ADD_SUBSCRIBER, REMOVE_SUBSCRIBER } from "../types/subscribersTypes";
+import { REMOVE_SUBSCRIBER, ADD_SUBSCRIBER } from "./types";
 
 const initialState = {
-  count: 370,
+  count: 360,
 };
-const subscribersReducer = (state = initialState, action) => {
+const addSubscribersReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_SUBSCRIBER:
       return {
@@ -20,4 +20,4 @@ const subscribersReducer = (state = initialState, action) => {
   }
 };
 
-export default subscribersReducer;
+export default addSubscribersReducer;
