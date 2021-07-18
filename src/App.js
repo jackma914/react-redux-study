@@ -1,52 +1,36 @@
-import React, { useState, useEffect } from "react";
-import Movie from "./components/Movie";
+import React from "react";
+import Customer from "./components/Customer";
+
+const customer = [
+  {
+    id: "0",
+    name: "simson",
+    age: 20,
+    image: "https://placeimg.com/64/64/3",
+  },
+  {
+    id: "1",
+    name: "risa",
+    age: 15,
+    image: "https://placeimg.com/64/64/2",
+  },
+  {
+    id: "2",
+
+    name: "jun",
+    age: 31,
+    image: "https://placeimg.com/64/64/1",
+  },
+];
 
 function App() {
-  const [movieTitle, setMovieTtitle] = useState("");
-  const [movieYear, setMovieYear] = useState("");
-  const [movies, setMovies] = useState([
-    { title: "simson 1", yaer: 2001 },
-    { title: "simson 2", yaer: 2002 },
-    { title: "simson 3", yaer: 2003 },
-  ]);
-
-  useEffect(() => {});
-
-  const renderMovies = movies.map((movie) => {
-    return <Movie movie={movie} key={movie.title}></Movie>;
-  });
-
-  const addMovie = (event) => {
-    event.preventDefault();
-    setMovies([...movies, { title: movieTitle, year: movieYear }]);
-    setMovieTtitle("");
-    setMovieYear("");
-  };
   return (
     <div>
-      <h1>movie list</h1>
-      <form action="" onSubmit={addMovie}>
-        <input
-          type="text"
-          value={movieTitle}
-          name=""
-          id=""
-          placeholder="영화제목"
-          onChange={(e) => setMovieTtitle(e.target.value)}
-        />
-        <br />
-        <input
-          type="text"
-          value={movieYear}
-          name=""
-          id=""
-          placeholder="개봉년도"
-          onChange={(e) => setMovieYear(e.target.value)}
-        />
-        <br />
-        <button type="submit">영화추가</button>
-      </form>
-      {renderMovies}
+      {customer.map((c) => {
+        return (
+          <Customer key={c.id} name={c.name} age={c.age} image={c.image} />
+        );
+      })}
     </div>
   );
 }
