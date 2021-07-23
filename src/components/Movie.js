@@ -4,7 +4,7 @@ function Movie(props) {
   return (
     <div>
       <div>{props.movie.title}</div>
-      <div>{props.movie.yaer}</div>
+      <div>{props.movie.year}</div>
     </div>
   );
 }

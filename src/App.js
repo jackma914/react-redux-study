@@ -2,52 +2,51 @@ import React, { useState } from "react";
 import Movie from "./components/Movie";
 
 function App() {
-  const [movieName, setMovieName] = useState("");
+  const [movieTitle, setMovieTitle] = useState("");
   const [movieYear, setMovieYear] = useState("");
-  const [addMovie, setAddMovie] = useState([
-    { title: "sss", year: 222 },
-    { title: "sss", year: 222 },
+  const [movies, setMovies] = useState([
+    { title: "the simson 1", year: 2020 },
+    { title: "the simson 2", year: 2030 },
+    { title: "the simson 3", year: 2040 },
   ]);
 
-  const handleValueChange = (e) => {
-    e.preventDefault();
-    if (e.target.name === "movieYear") {
-      setMovieYear(e.target.value);
-    } else if (e.target.name === "movieName") {
-      setMovieName(e.target.value);
-    }
-  };
-
-  const renderMovies = addMovie.map((movie) => {
+  const renderMovies = movies.map((movie) => {
     return <Movie movie={movie} key={movie.title} />;
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // setAddMovie({ title: movieName, year: movieYear });
-    // console.log(addMovie);
+  const addMovie = (e) => {
+    e.preventDefault();
+    setMovies([
+      ...movies,
+      {
+        title: movieTitle,
+        year: movieYear,
+      },
+    ]);
+
+    setMovieTitle("");
+    setMovieYear("");
   };
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" onSubmit={addMovie}>
         <input
           type="text"
-          name="movieName"
-          value={movieName}
-          onChange={handleValueChange}
+          value={movieTitle}
+          onChange={(e) => setMovieTitle(e.target.value)}
           placeholder="영화제목"
         />
         <br />
         <input
           type="text"
-          name="movieYear"
           value={movieYear}
-          onChange={handleValueChange}
+          onChange={(e) => setMovieYear(e.target.value)}
           placeholder="개봉년도"
         />
         <br />
-        <button type="submit">영화추가</button>
+        <button type="submit">추가</button>
       </form>
-      {renderMovies}{" "}
+      {renderMovies}
     </div>
   );
 }
