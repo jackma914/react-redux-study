@@ -1,11 +1,11 @@
 import React from "react";
-import DisplayNumber from "../components/DisplayNumber";
+import DisplayNumber from "../containers/DisplayNumber";
 
-function DisplayNumberRoot(props) {
+function DisplayNumberRoot() {
   return (
     <div>
       <h1>Display Number Root</h1>
-      <DisplayNumber number={props.number} />
+      <DisplayNumber unit="kg" />
     </div>
   );
 }

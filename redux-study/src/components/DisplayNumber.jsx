@@ -1,16 +1,10 @@
-import React, { useState } from "react";
-import store from "../store";
+import React from "react";
 
-function DisplayNumber() {
-  const [state, setState] = useState({ number: store.getState().number });
-  store.subscribe(() => {
-    setState({ number: store.getState().number });
-  });
-
+function DisplayNumber(props) {
   return (
     <div>
       <h1>Display Number</h1>
-      <input type="text" value={state.number} name="" id="" readOnly />
+      <input type="text" value={props.number} name="" id="" readOnly />
     </div>
   );
 }
