@@ -1,6 +1,5 @@
-div {
-  border: 5px solid #764abc;
-  margin: 10px;
-  color: #764abc;
-  padding: 10px;
+.items {
+  border-bottom: 1px solid #333;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
