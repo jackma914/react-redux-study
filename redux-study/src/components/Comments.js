@@ -12,9 +12,9 @@ const Comments = ({ fetchComments, loading, comments }) => {
   ) : (
     comments.map((comment) => (
       <div key={comment.id}>
-        <h3>{comment.name}</h3>
+        {/* <h3>{comment.name}</h3> */}
         <p>{comment.email}</p>
-        <p>{comment.body}</p>
+        {/* <p>{comment.body}</p> */}
       </div>
     ))
   );
